@@ -1,4 +1,10 @@
 
+let level = 1;
+let nextBgImg;
+let isTransitioning = false;
+let fadeAlpha = 0;
+
+
 //board
 let board;
 let boardWidth = 360;
@@ -55,10 +61,10 @@ window.onload = function() {
     }
 
     topPipeImg = new Image();
-    topPipeImg.src = "./toppipe.png";
+    topPipeImg.src = "./toppipered.png";
 
     bottomPipeImg = new Image();
-    bottomPipeImg.src = "./bottompipe.png";
+    bottomPipeImg.src = "./bottompipered.png";
 
     requestAnimationFrame(update);
     setInterval(placePipes, 1500); //every 1.5 sec
@@ -112,6 +118,7 @@ function update() {
         context.fillText("YOU SUCK!", 5, 90);
     }
 }
+
 function placePipes() {
     if (gameOver) {
         return;
